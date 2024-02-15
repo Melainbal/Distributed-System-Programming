@@ -1,8 +1,8 @@
 # Sarcasm-Analysis
 
-real-world application to distributively process a list of amazon
-reviews, perform sentiment analysis and named-entity recognition, and display the result on a web
-page. 
+A distributed application designed to process Amazon reviews, perform sentiment analysis, and detect sarcasm, showcasing results on a web page.
+This project utilizes AWS cloud resources, including EC2 instances for processing and S3 for storage, to analyze input text files of reviews in JSON format.
+
 
 More Details
 
