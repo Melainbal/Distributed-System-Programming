@@ -54,6 +54,8 @@ High-level explanation of program flow:
 15. Local Application creates html output file.
 16.Manager terminates all workers instances and itself when all missions are done.
 
+[![Screenshot-2024-02-15-at-16-12-30-2.png](https://i.postimg.cc/0NVBMpRb/Screenshot-2024-02-15-at-16-12-30-2.png)](https://postimg.cc/GBsQ6TpC)
+
 Local Application
 The application resides on a local (non-cloud) machine. Once started, it reads the input file from the user, and:
  	o Checks if a Manager node is active on the EC2 cloud. If it is not, the application will start the manager node. 
