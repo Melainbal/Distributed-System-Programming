@@ -3,8 +3,9 @@
 A distributed application designed to process Amazon reviews, perform sentiment analysis, and detect sarcasm, showcasing results on a web page.
 This project utilizes AWS cloud resources, including EC2 instances for processing and S3 for storage, to analyze input text files of reviews in JSON format.
 
+-----------------------
 
-More Details
+### More Details
 
 The application is composed of a local application, and non-local instances running on Amazon
 cloud.
@@ -23,7 +24,7 @@ The main use-case:
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-Instructions - how to run the project:
+### Instructions - how to run the project:
 
 -Extract a jar file of the local application, main program is App.
 
@@ -47,7 +48,7 @@ Type of instances used in the program:
 	•	type: m4.large.
  
 
-High-level explanation of program flow:
+### High-level explanation of program flow:
 
 1. Local Application uploads the file with the list of reviews URLs to S3.
 2. Local Application sends a message (queue) stating the location of the input file on S3.
@@ -71,7 +72,7 @@ High-level explanation of program flow:
 
 [![Screenshot-2024-02-15-at-16-12-30-2.png](https://i.postimg.cc/0NVBMpRb/Screenshot-2024-02-15-at-16-12-30-2.png)](https://postimg.cc/GBsQ6TpC)
 
-Local Application
+#### Local Application
 
 The application resides on a local (non-cloud) machine. Once started, it reads the input file from the user, and:
 
@@ -90,7 +91,7 @@ The application resides on a local (non-cloud) machine. Once started, it reads t
 IMPORTANT: There might be more than one than one local application running at the same time.
 
 
-The Manager
+#### The Manager
 
  The manager process resides on an EC2 node. It checks a special SQS fifo queue for messages from local applications. Once it receives a message it:
  
@@ -141,7 +142,7 @@ The manager has multi-threads working:
 	✓	working-workers threads: 5 threads for processing answers arriving from workers, then writing these answers to a file existed to be sent to local app.
  
 
-The Workers
+#### The Workers
 
 A worker process resides on an EC2 node. His life cycle:
 
@@ -154,7 +155,7 @@ Repeatedly:
 	• Remove the processed message from the SQS queue. 
  
 
-Queues and Messages 
+#### Queues and Messages 
 
 As described above, queues are used for: 
 
